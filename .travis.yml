@@ -4,5 +4,6 @@ python:
 install:
  - pip install coverage
  - pip install coveralls
+ - pip3 install termcolor
 script: coverage run test_rpn.py
 after_success: coveralls
