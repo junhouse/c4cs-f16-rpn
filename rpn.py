@@ -1,5 +1,5 @@
 import operator
-
+from termcolor import colored, cprint
 
 operators = {
 	'+': operator.add,
@@ -25,10 +25,21 @@ def calculate(myarg):
 	if len(stack) != 1:
 		raise TypeError("Too many parameters")
 	return stack.pop()
+
+def doSomething(sto):
+	firstname = "Jun"
+	lastname = "kim"
+	fullname = firstname + lastname + sto
+	print (fullname)
+
 def main():
 	while True:
 		result = calculate(input("rpn calc> "))
-		print("Result: ", result)
+		print ("Result: ")
+		if result > 0:
+			cprint(result, 'blue', attrs=['bold'])
+		else:
+			cprint(result, 'red', attrs=['bold'])
 
 if __name__ == '__main__':
 	main()
